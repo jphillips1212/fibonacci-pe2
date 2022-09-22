@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option go_package = "github.com/jphillips1212/fibonacci-pe2/fibonacci";
+
+package fibonacci;
+
+// The fibonacci service definition
+service Fibonacci {
+    // Sends a request to the fibonacci service to calculate the total
+    rpc CalculateFibonacciTotal (FibonacciRequest) returns (FibonacciResponse) {}
+}
+
+// The request message containing the maximum to sum to, and the rule for summing
+message FibonacciRequest {
+    uint64 maximum = 1;
+    string rule = 2;
+}
+
+
+// The response message containing the total from the request
+message FibonacciResponse {
+    uint64 total = 1;
+}
